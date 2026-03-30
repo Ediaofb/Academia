@@ -1,24 +1,21 @@
 package com.academia.api.entities;
 
-import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-import jakarta.persistence.Column;
-import org.springframework.stereotype.Component;
+import jakarta.persistence.Entity;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
-import lombok.AllArgsConstructor;
 import java.io.Serializable;
+import java.util.Date;
 
 @Getter
 @Setter
 @ToString
 @Entity
 @Table(name = "associado")
-@Component
 public class associado implements Serializable{
     
     @Id
@@ -26,16 +23,27 @@ public class associado implements Serializable{
     private Long id;
     private String nome;
     private String email;
-    private String telefone;
+    private Long telefone;
     private String cpf;
-    
+    private String endereco;
+    private Date dataNascimento;
+    private Date dataAdesao;
+    private Date dataVencimento;
+    private String status;
+        
     public associado() {
     }
     
-    public associado(String nome, String email, String telefone, String cpf) {
+    public associado(String nome, String email, Long telefone, String cpf, String endereco, 
+        Date dataNascimento, Date dataAdesao, Date dataVencimento, String status) {
         this.nome = nome;
         this.email = email;
         this.telefone = telefone;
         this.cpf = cpf;
+        this.endereco = endereco;
+        this.dataNascimento = dataNascimento;
+        this.dataAdesao = dataAdesao;
+        this.dataVencimento = dataVencimento;
+        this.status = status;
     }
 }
