@@ -9,7 +9,7 @@ import lombok.*;
 @ToString
 @Entity
 @Table(name = "plano")
-public class plano implements Serializable {
+public class Plano implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -17,10 +17,10 @@ public class plano implements Serializable {
     private String descricao;
     private float valor_mensal;
 
-    public plano() {
+    public Plano() {
     }
 
-    public plano(String nome, String descricao, float valor_mensal) {
+    public Plano(String nome, String descricao, float valor_mensal) {
         this.nome = nome;
         this.descricao = descricao;
         this.valor_mensal = valor_mensal;

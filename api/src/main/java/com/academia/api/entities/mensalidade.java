@@ -1,7 +1,6 @@
 package com.academia.api.entities;
 
 import java.io.Serializable;
-import java.util.Date;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -10,6 +9,7 @@ import jakarta.persistence.Table;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
+import java.time.LocalDate;
 
 
 @Getter
@@ -17,25 +17,24 @@ import lombok.ToString;
 @ToString
 @Entity
 @Table(name = "mensalidade")
-
-public class mensalidade implements Serializable {
+public class Mensalidade implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private Long contratoId;
-    private Date mes_ano;
-    private Date data_vencimento;
-    private Date data_pagamento;
+    private LocalDate mes_ano;
+    private LocalDate data_vencimento;
+    private LocalDate data_pagamento;
     private float valor;
     private String status;
     private int pago;
 
 
-    public mensalidade() {
+    public Mensalidade() {
     }
 
-    public mensalidade(Long contratoId, Date data_vencimento, float valor, String status) {
+    public Mensalidade(Long contratoId, LocalDate mes_ano, LocalDate data_vencimento, float valor, String status) {
         this.contratoId = contratoId;
         this.data_vencimento = data_vencimento;
         this.valor = valor;

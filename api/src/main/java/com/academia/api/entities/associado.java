@@ -9,14 +9,14 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 import java.io.Serializable;
-import java.util.Date;
+import java.time.LocalDate;
 
 @Getter
 @Setter
 @ToString
 @Entity
 @Table(name = "associado")
-public class associado implements Serializable{
+public class Associado implements Serializable{
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -26,16 +26,16 @@ public class associado implements Serializable{
     private Long telefone;
     private String cpf;
     private String endereco;
-    private Date dataNascimento;
-    private Date dataAdesao;
-    private Date dataVencimento;
+    private LocalDate dataNascimento;
+    private LocalDate dataAdesao;
+    private LocalDate dataVencimento;
     private String status;
         
-    public associado() {
+    public Associado() {
     }
     
-    public associado(String nome, String email, Long telefone, String cpf, String endereco, 
-        Date dataNascimento, Date dataAdesao, Date dataVencimento, String status) {
+    public Associado(String nome, String email, Long telefone, String cpf, String endereco, 
+        LocalDate dataNascimento, LocalDate dataAdesao, LocalDate dataVencimento, String status) {
         this.nome = nome;
         this.email = email;
         this.telefone = telefone;
